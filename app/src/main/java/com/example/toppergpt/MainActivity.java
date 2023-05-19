@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
             JSONArray messageArr = new JSONArray();
 
-            //instruction to gpt        for role:System
 //            JSONObject instruction = new JSONObject();
 //            instruction.put("role", "system");
 //            instruction.put("content", "You are an expert and a helpful teacher. Please provide an easy explanation: ");
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer OPENAI_API_KEY")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
